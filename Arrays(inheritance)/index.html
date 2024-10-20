@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of animals</title>
+    <p>
+        Check array of animals for alphabet "a"<br>
+        Animals: cats, dogs, rabbits, mice
+    </p>
+</head>
+<body>
+    <div id="result"></div>
+    <div id="not_a"></div>
+
+    <script>
+        // array of animals
+        const animals = ["dogs", "cats", "rabbits", "mice"];
+
+        let output = '';
+        let not_a = '';
+
+        animals.forEach(animal => {
+            const hasA = animal.includes('a');
+            output += `${animal}: ${hasA}<br>`;  
+
+            if (!hasA) {
+                not_a += `${animal} `;
+            }
+        });
+
+        document.getElementById("result").innerHTML = output;
+
+        if (not_a) {
+            document.getElementById("not_a").innerHTML = `Animals that do not have 'a': <br>${not_a}`;
+        }
+    </script>
+
+</body>
+</html>
